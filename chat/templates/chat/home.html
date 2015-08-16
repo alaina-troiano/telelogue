@@ -41,4 +41,14 @@
                 </a>
             </li>
     </ul>
+
+    {% if user.is_authenticated %}
+        <p>
+            Logged in as {{ user }}<br />
+            <a href="{% url 'logout_then_login' %}">Logout</a>
+        </p>
+    {% else %}
+        <p>Not logged in</p>
+    {% endif %}
+
 {% endblock content %}
